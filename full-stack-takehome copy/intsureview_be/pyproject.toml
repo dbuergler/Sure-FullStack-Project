@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "intsureview-be"
+version = "0.1.0"
+description = ""
+authors = ["Sure <info@sureapp.com>"]
+readme = "README.md"
+packages = [{include = "intsureview_be"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "~4.1.9"
+djangorestframework = "^3.14.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+pytest = "^7.3.2"
+pytest-django = "^4.5.2"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+DJANGO_SETTINGS_MODULE='intsureview_be.settings'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

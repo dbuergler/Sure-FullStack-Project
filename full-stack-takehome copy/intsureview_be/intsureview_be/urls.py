@@ -11,6 +11,8 @@ from intsureview_be.apps.api import views
 router = routers.DefaultRouter()
 router.register(r"users", views.UserViewSet)
 router.register(r"groups", views.GroupViewSet)
+router.register(r"entries", views.EntryCreateView)
+
 
 
 
@@ -20,7 +22,7 @@ router.register(r"groups", views.GroupViewSet)
 # Added the path to '' for the intsureview_be.apps.api.urls to grab the urls made in the api's urls.py file
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include('intsureview_be.apps.api.urls')),
+    path('api/', include(router.urls)),
     path("", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]

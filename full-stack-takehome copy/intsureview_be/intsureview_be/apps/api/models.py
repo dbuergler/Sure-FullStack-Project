@@ -10,7 +10,7 @@ class Entry(models.Model):
     email = models.EmailField()
     comments = models.TextField()
     select = models.CharField(max_length=10)
-    raceOption = models.CharField(max_length=10)
+    raceOption = models.CharField(max_length=50)
     
 
     def __str__(self):

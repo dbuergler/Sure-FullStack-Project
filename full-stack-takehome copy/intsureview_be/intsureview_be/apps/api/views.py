@@ -35,7 +35,7 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 
-class EntryCreateView(generics.ListCreateAPIView):
+class EntryCreateView(viewsets.ModelViewSet):
 
     """
     API endpoint that allows entries to be viewed or edited.

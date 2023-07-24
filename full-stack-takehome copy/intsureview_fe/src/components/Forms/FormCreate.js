@@ -88,12 +88,14 @@ const FormCreate = () => {
                     })
                     .then((response) => {
                         console.log('Entry updated successfully', response.data);
+                        alert('Entry updated successfully!')
                         setIsSubmitting(false);
                         setEntryData(values);// Reset the form fields after successful update
                         refreshEntries(); // Update the list of form entries
                     })
                     .catch((error) => {
                         console.error('Error updating entry', error);
+                        alert('Error updating entry. Please try again', error);
                         setIsSubmitting(false);
                     })
                 } else {
@@ -106,13 +108,15 @@ const FormCreate = () => {
                         }
                     })
                     .then((response) => {
-                        console.log('Entry updated successfully', response.data);
+                        console.log('Entry created successfully', response.data);
+                        alert('Entry created successfully!')
                         setIsSubmitting(false);
                         setEntryData(values);
                         refreshEntries();
                     })
                     .catch((error) => {
                         console.error('Error posting entry', error);
+                        alert('Error creating entry. Please try again!', error);
                         setIsSubmitting(false);
                     });
                 }    
@@ -133,10 +137,12 @@ const FormCreate = () => {
         })
         .then((response) => {
             console.log('Entry deleted successfully:', response.data);
+            alert('Entry deleted successfully!')
             refreshEntries(); // Update the list of form entries after successful deletion
         })
         .catch((error) => {
             console.error('Error deleting  entry:', error);
+            alert('Error deleting entry. Please try again', error);
           });
     };
 
@@ -148,6 +154,7 @@ const FormCreate = () => {
         })
         .catch((error) => {
             console.error('Error fetching entries:', error);
+            alert('Error fetching entries. Please try again', error)
           })
     }
 

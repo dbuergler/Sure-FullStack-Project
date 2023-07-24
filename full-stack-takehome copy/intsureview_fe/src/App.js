@@ -1,23 +1,25 @@
 import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Footer from './components/Home/Footer';
+import Header from './components/Home/Header';
+import FormCreate from './components/Forms/FormCreate';
 
-function App() {
+
+const App = () =>{
+
+// Imported FormCreate component to App.js to display the form 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Header/>
+          <div>
+            <h2>Race Sign Up Form</h2>
+            <FormCreate/>
+          </div>
+        <Footer/>
+      </div>
     </div>
   );
 }

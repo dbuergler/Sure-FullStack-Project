@@ -35,13 +35,24 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 
-class EntryView(generics.ListCreateAPIView):
+class EntryCreateView(generics.ListCreateAPIView):
 
     """
     API endpoint that allows entries to be viewed or edited.
     """
     serializer_class = EntrySerializer
     queryset = Entry.objects.all()
+    permission_classes = [IsAuthenticated]
+    authentication_classes=[SessionAuthentication]
+
+
+    """
+    API endpoint that allows entries to be updated or deleted.
+    """
+
+class EntryRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Entry.objects.all()
+    serializer_class = EntrySerializer
     permission_classes = [IsAuthenticated]
     authentication_classes=[SessionAuthentication]
 

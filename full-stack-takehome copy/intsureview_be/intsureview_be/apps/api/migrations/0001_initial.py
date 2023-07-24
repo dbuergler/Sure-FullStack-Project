@@ -2,10 +2,6 @@
 
 from django.db import migrations, models
 
-def create_data(apps, schema_editor):
-    Entry = apps.get_model('entries', 'Entry')
-    Entry(name="John Smith", email= "jsmith@test.com", comments="Let's run fast!", select="Yes", raceOption="5k").save()
-
 
 class Migration(migrations.Migration):
 
@@ -16,7 +12,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(create_data),
         migrations.CreateModel(
             name='Entry',
             fields=[
